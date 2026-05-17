@@ -13,6 +13,7 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/jedda/step-posture-connector/internal/providers/file"
 	"github.com/jedda/step-posture-connector/internal/providers/jamf"
+	"github.com/allgeyer/step-posture-connector/internal/providers/soti"
 	"github.com/jedda/step-posture-connector/internal/shared"
 	"github.com/joho/godotenv"
 	"io"

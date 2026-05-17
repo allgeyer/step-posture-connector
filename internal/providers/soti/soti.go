@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/go-playground/validator/v10"
-	"github.com/jedda/step-posture-connector/internal/shared"
+	"github.com/allgeyer/step-posture-connector/internal/shared"
 )
 
 // Provider implements the posture-connector Provider interface for SOTI MobileControl.

@@ -1,9 +1,10 @@
-module github.com/jedda/step-posture-connector
+module github.com/allgeyer/step-posture-connector
 
 go 1.21.4
 
 require (
 	github.com/go-playground/validator/v10 v10.16.0
+	github.com/jedda/step-posture-connector v1.0.0
 	github.com/joho/godotenv v1.5.1
 )
 
