@@ -11,10 +11,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/go-playground/validator/v10"
-	"github.com/jedda/step-posture-connector/internal/providers/file"
-	"github.com/jedda/step-posture-connector/internal/providers/jamf"
+	"github.com/allgeyer/step-posture-connector/internal/providers/file"
+	"github.com/allgeyer/step-posture-connector/internal/providers/jamf"
 	"github.com/allgeyer/step-posture-connector/internal/providers/soti"
-	"github.com/jedda/step-posture-connector/internal/shared"
+	"github.com/allgeyer/step-posture-connector/internal/shared"
 	"github.com/joho/godotenv"
 	"io"
 	"net/http"
@@ -41,8 +41,8 @@ type ProviderInterface interface {
 // prior to starting HTTPS webhook server
 func main() {
 	shared.WriteLog(fmt.Sprintf("Step Posture Connector v%s", version), 0, 36)
-	shared.WriteLog("by Jedda Wignall <oss@jedda.me>", 0, 36)
-	shared.WriteLog("For information & documentation, see https://github.com/jedda/step-posture-connector", 0, 36)
+	shared.WriteLog("by Jedda Wignall <oss@allgeyer.me>", 0, 36)
+	shared.WriteLog("For information & documentation, see https://github.com/allgeyer/step-posture-connector", 0, 36)
 
 	// instantiate our global validator
 	validate = validator.New(validator.WithRequiredStructEnabled())

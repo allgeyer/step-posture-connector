@@ -3,7 +3,7 @@ package file
 import (
 	"encoding/base64"
 	"encoding/json"
-	"github.com/jedda/step-posture-connector/internal/shared"
+	"github.com/allgeyer/step-posture-connector/internal/shared"
 	"testing"
 )
 

@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/go-playground/validator/v10"
-	"github.com/jedda/step-posture-connector/internal/shared"
+	"github.com/allgeyer/step-posture-connector/internal/shared"
 	"io"
 	"os"
 	"strings"

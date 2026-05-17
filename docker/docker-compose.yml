@@ -1,11 +1,11 @@
-# https://github.com/jedda/step-posture-connector
+# https://github.com/allgeyer/step-posture-connector
 # Example docker-compose.yml for step-posture-connector
 
 version: '3.8'
 
 services:
   step-posture-connector:
-    image: jedda/step-posture-connector:latest
+    image: allgeyer/step-posture-connector:latest
     container_name: step-posture-connector
     restart: unless-stopped
     environment:
