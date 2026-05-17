@@ -4,7 +4,6 @@ go 1.25.0
 
 require (
 	github.com/go-playground/validator/v10 v10.30.2
-	github.com/allgeyer/step-posture-connector v1.0.0
 	github.com/joho/godotenv v1.5.1
 )
 

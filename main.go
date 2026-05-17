@@ -41,7 +41,7 @@ type ProviderInterface interface {
 // prior to starting HTTPS webhook server
 func main() {
 	shared.WriteLog(fmt.Sprintf("Step Posture Connector v%s", version), 0, 36)
-	shared.WriteLog("by Jedda Wignall <oss@allgeyer.me>", 0, 36)
+	shared.WriteLog("by Jedda Wignall <oss@jedda.me>", 0, 36)
 	shared.WriteLog("For information & documentation, see https://github.com/allgeyer/step-posture-connector", 0, 36)
 
 	// instantiate our global validator
@@ -66,7 +66,7 @@ func main() {
 	configRules := map[string]interface{}{
 		"LOGGING_LEVEL":   "omitempty,oneof=0 1 2",
 		"PORT":            "omitempty,number",
-		"PROVIDER":        "required,oneof=file jamf",
+		"PROVIDER":        "required,oneof=file jamf soti",
 		"TLS_CERT_PATH":   "required,file",
 		"TLS_KEY_PATH":    "required,file",
 		"TLS_CA_PATH":     "omitempty,file",
@@ -94,6 +94,8 @@ func main() {
 		provider = file.Provider{}
 	} else if providerName == "jamf" {
 		provider = jamf.Provider{}
+	} else if providerName == "soti" {
+		provider = soti.Provider{}
 	}
 	_, providerOk := provider.(ProviderInterface)
 	if !providerOk {
