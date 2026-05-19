@@ -335,7 +335,7 @@ func (c *Client) doGet(uri string) ([]byte, error) {
 // SOTI represents groups as hierarchical paths (e.g. "//All Devices/Compliant").
 // We fetch the group's device list and scan for the device ID.
 //
-// Endpoint: GET /api/deviceGroups/devices/search?groupPath{encodedPath}
+// Endpoint: GET /api/devices/search?groupPath={encodedPath}
 func (c *Client) isDeviceInGroup(deviceID, groupPath string) (bool, error) {
 	encodedPath := url.PathEscape(groupPath)
 	uri := fmt.Sprintf("/api/devices/search?groupPath%%3D%s", encodedPath)
