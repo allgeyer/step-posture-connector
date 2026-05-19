@@ -147,8 +147,8 @@ func (p Provider) Handler(handlerMode string, stepInputData shared.StepAttestati
 	// -------------------------------------------------------------------
 	// 1. Search for the device by serial number.
 	// -------------------------------------------------------------------
-	// SOTI search endpoint: GET /api/devices/search?filter=SerialNumber='<serial>'
-	searchPath := fmt.Sprintf("/api/devices/search?filter=SerialNumber%%3D%%27%s%%27", url.QueryEscape(serial))
+	// SOTI search endpoint: GET /api/devices/search?filter=ManufacturerSerialNumber='<serial>'
+	searchPath := fmt.Sprintf("/api/devices/search?filter=ManufacturerSerialNumber%%3D%%27%s%%27", url.QueryEscape(serial))
 	body, err := client.doGet(searchPath)
 	if err != nil {
 		if err.Error() == "404" {
@@ -335,10 +335,10 @@ func (c *Client) doGet(uri string) ([]byte, error) {
 // SOTI represents groups as hierarchical paths (e.g. "//All Devices/Compliant").
 // We fetch the group's device list and scan for the device ID.
 //
-// Endpoint: GET /api/deviceGroups/{encodedPath}/devices
+// Endpoint: GET /api/deviceGroups/devices/search?groupPath{encodedPath}
 func (c *Client) isDeviceInGroup(deviceID, groupPath string) (bool, error) {
 	encodedPath := url.PathEscape(groupPath)
-	uri := fmt.Sprintf("/api/deviceGroups/%s/devices", encodedPath)
+	uri := fmt.Sprintf("/api/devices/search?groupPath%%3D%s", encodedPath)
 
 	body, err := c.doGet(uri)
 	if err != nil {
